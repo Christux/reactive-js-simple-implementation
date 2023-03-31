@@ -17,20 +17,20 @@ const observer = {
 //   return this.filter(o => delivery = !delivery);
 // };
 
-// const obs$ = Observable.fromEvent(btn1, 'click').map(_ => 1)
-//   .merge(
-//     Observable.fromEvent(btn2, 'click').map(_ => 2),
-//     Observable.fromEvent(btn3, 'click').map(_ => 3),
-//     Observable.fromEvent(btn4, 'click').map(_ => 4)
-//   )
-//   .map(o => 'B'+o)
-//   .do(o => lp.innerText = o)
-//   //.take(5);
+const obs$ = Observable.fromEvent(btn1, 'click').map(_ => 1)
+  .merge(
+    Observable.fromEvent(btn2, 'click').map(_ => 2),
+    Observable.fromEvent(btn3, 'click').map(_ => 3),
+    Observable.fromEvent(btn4, 'click').map(_ => 4)
+  )
+  .map(o => 'B'+o)
+  .do(o => lp.innerText = o);
+  //.take(5);
 
-const obs$ = range(2,8)
-  .filter(o=>o%2===0)
-  .take(3)
-  .map(o=>o*2);
+// const obs$ = range(2,8)
+//   .filter(o=>o%2===0)
+//   .take(3)
+//   .map(o=>o*2);
 
 // //const obs$ = Observable.interval(1000).take(10);
 
